@@ -1,3 +1,10 @@
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./utils/configs/Router";
+
 export function App() {
-  return <h1>Main</h1>;
+  return (
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }
