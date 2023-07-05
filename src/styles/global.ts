@@ -22,11 +22,11 @@ export const GlobalStyle = createGlobalStyle`
    --base-card: #F3F2F2;
    --base-button: #E6E5E5;
    --base-background: #FAFAFA;
-
   }
 
-  html,body {
+  html, body {
    height: 100%;
    width: 100%;
-  }
+   background-color: var(--base-card);
+  } 
 `;

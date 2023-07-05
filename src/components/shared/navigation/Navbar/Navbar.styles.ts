@@ -5,6 +5,7 @@ export const Header = styled.header`
   padding: 32px 160px;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--base-background);
 `;
 
 export const MenuActionsContainer = styled.div`
