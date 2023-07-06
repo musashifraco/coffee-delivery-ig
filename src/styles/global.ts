@@ -24,9 +24,9 @@ export const GlobalStyle = createGlobalStyle`
    --base-background: #FAFAFA;
   }
 
-  html, body {
+  html, body, #id {
    height: 100%;
    width: 100%;
-   background-color: var(--base-card);
+   background-color: var(--base-background);
   } 
 `;

@@ -20,6 +20,7 @@ export const IntroSection = styled.section`
     top: 94px;
     width: 476px;
     height: 360px;
+    z-index: 0;
   }
 `;
 
@@ -30,6 +31,7 @@ export const TextContainer = styled.div`
   width: 588px;
   margin: 94px 160px 66px 160px;
   gap: 16px;
+  z-index: 1;
 
   h1 {
     word-wrap: break-word;

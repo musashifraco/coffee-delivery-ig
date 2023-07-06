@@ -4,12 +4,12 @@ import {
   TextContainer,
   // Title,
 } from "./Intro.styles";
-import BackgroundImage from "../../../../../public/Background.png";
-import Coffee from "../../../../../public/Coffee.svg";
-import CartIcon from "../../../../../public/Car Icon.svg";
-import BoxIcon from "../../../../../public/Box Icon.svg";
-import ClockIcon from "../../../../../public/Clock Icon.svg";
-import CoffeeIcon from "../../../../../public/Coffee Icon.svg";
+import BackgroundImage from "../../../../../public/images/Background.png";
+import Coffee from "../../../../../public/images/Coffee.svg";
+import CartIcon from "../../../../../public/icons/Car Icon.svg";
+import BoxIcon from "../../../../../public/icons/Box Icon.svg";
+import ClockIcon from "../../../../../public/icons/Clock Icon.svg";
+import CoffeeIcon from "../../../../../public/icons/Coffee Icon.svg";
 
 export function Intro() {
   return (

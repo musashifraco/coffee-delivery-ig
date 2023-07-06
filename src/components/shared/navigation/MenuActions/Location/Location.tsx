@@ -1,5 +1,5 @@
 import { LocationContainer } from "./Location.styles";
-import LocationIcon from "../../../../../../public/Location.svg";
+import LocationIcon from "../../../../../../public/icons/Location.svg";
 
 export function Location() {
   return (
