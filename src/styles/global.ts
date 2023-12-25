@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
    --base-background: #FAFAFA;
   }
 
-  html, body, #id {
+  html, body, #root {
    height: 100%;
    width: 100%;
    background-color: var(--base-background);
