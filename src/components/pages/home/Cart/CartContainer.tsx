@@ -31,38 +31,6 @@ export function CartContainer() {
                 <S.CoffeeItemPrice>R$ 9,90</S.CoffeeItemPrice>
               </S.CoffeeItem>
             </S.CoffeeItemContainer>
-            <S.CoffeeItemContainer>
-              <S.CoffeeItem>
-                <CImage src={MockedCoffeeImage} />
-                <S.CoffeeItemInfo>
-                  <S.CoffeeName>Expresso Tradicional</S.CoffeeName>
-                  <S.CoffeeItemButtons>
-                    <Quantifier />
-                    <S.RemoveCoffeeItemButton>
-                      <CImage src={BinIcon} />
-                      remover
-                    </S.RemoveCoffeeItemButton>
-                  </S.CoffeeItemButtons>
-                </S.CoffeeItemInfo>
-                <S.CoffeeItemPrice>R$ 9,90</S.CoffeeItemPrice>
-              </S.CoffeeItem>
-            </S.CoffeeItemContainer>
-            <S.CoffeeItemContainer>
-              <S.CoffeeItem>
-                <CImage src={MockedCoffeeImage} />
-                <S.CoffeeItemInfo>
-                  <S.CoffeeName>Expresso Tradicional</S.CoffeeName>
-                  <S.CoffeeItemButtons>
-                    <Quantifier />
-                    <S.RemoveCoffeeItemButton>
-                      <CImage src={BinIcon} />
-                      remover
-                    </S.RemoveCoffeeItemButton>
-                  </S.CoffeeItemButtons>
-                </S.CoffeeItemInfo>
-                <S.CoffeeItemPrice>R$ 9,90</S.CoffeeItemPrice>
-              </S.CoffeeItem>
-            </S.CoffeeItemContainer>
           </S.CoffeeItemsContainer>
           <S.TextInformationContainer>
             <S.TotalItemInformation>

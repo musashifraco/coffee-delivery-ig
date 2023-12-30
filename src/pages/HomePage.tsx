@@ -8,12 +8,11 @@ export function HomePage() {
       <Navbar />
       <Intro />
       {/* 
-
+      <CartContainer />
       <CoffeeList /> 
-      <CartContainer/>
+
       <ConfirmedOrderSection />
       */}
-
       <CoffeeList />
     </>
   );

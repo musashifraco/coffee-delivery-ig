@@ -115,7 +115,12 @@ export const CoffeCardContainer = styled.div`
       gap: 8px;
 
       border-radius: 6px;
+      border: none;
       background: var(--brand-purple-dark, #4b2995);
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `;
