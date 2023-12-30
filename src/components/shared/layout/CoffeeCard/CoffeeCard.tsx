@@ -16,22 +16,51 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
   const [quantity, setQuantity] = useState(0);
 
   function createCoffeeOnLocalStorage() {
-    const item = window.localStorage.getItem(`${coffee.id}`);
+    const coffeeList = window.localStorage.getItem("coffeeList");
 
-    if (item === null) {
+    if (coffeeList === null) {
+      const coffeeListArray = [];
       const order = {
+        id: coffee.id,
         coffeeObject: coffee,
         productQuantity: quantity,
       };
-      window.localStorage.setItem(`${coffee.id}`, JSON.stringify(order));
+
+      coffeeListArray.push(order);
+
+      window.localStorage.setItem(
+        "coffeeList",
+        JSON.stringify(coffeeListArray)
+      );
     } else {
-      const orderStored = JSON.parse(
-        window.localStorage.getItem(`${coffee.id}`) || "{}"
+      const coffeeListArray = JSON.parse(
+        window.localStorage.getItem("coffeeList") || "[]"
+      );
+      const order = coffeeListArray.filter(
+        (element) => element.id === coffee.id
       );
 
-      orderStored.productQuantity += quantity;
+      if (order.length === 0) {
+          const newOrder = {
+            id: coffee.id,
+            coffeeObject: coffee,
+            productQuantity: quantity,
+          };
+          
+          coffeeListArray.push(newOrder)
 
-      window.localStorage.setItem(`${coffee.id}`, JSON.stringify(orderStored));
+          window.localStorage.setItem("coffeeList", JSON.stringify(coffeeListArray))
+      } else {
+        const newCoffeeListArray = coffeeListArray.map(objeto => {
+          if (objeto.id === coffee.id) {
+            objeto.productQuantity += quantity
+          }
+          // Se não for igual, mantém o objeto inalterado
+          return objeto;
+        })
+
+        window.localStorage.setItem("coffeeList", JSON.stringify(newCoffeeListArray))
+      }
     }
   }
 
