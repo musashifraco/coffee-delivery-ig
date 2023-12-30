@@ -1,20 +1,28 @@
 import { CoffeCardContainer } from "./CoffeeCard.styles";
-import CoffeDefault from "../../../../../public/coffe-images/expresso-tradicional.jpg";
 import { Quantifier } from "../Quantifier/Quantifier";
 import ShoppingCartSimple from "../../../../../public/icons/ShoppingCartSimple.svg";
 
-export function CoffeeCard() {
+export interface CoffeeProps {
+  id: number;
+  url: string;
+  tag: string;
+  title: string;
+  description: string;
+  price: number;
+}
+
+export function CoffeeCard({ coffee }: CoffeeProps) {
   return (
     <CoffeCardContainer>
-      <img src={CoffeDefault} alt="" />
-      <p>TRADICIONAL</p>
+      <img src={coffee.url} alt="" />
+      <p>{coffee.tag}</p>
       <div className="card-text-container">
-        <h3>Expresso Tradicional</h3>
-        <p>O tradicional café feito com água quente e grãos moídos</p>
+        <h3>{coffee.title}</h3>
+        <p>{coffee.description}</p>
       </div>
       <div className="purchase-container">
         <p>
-          R$ <strong>9,90</strong>
+          R$ <strong>{coffee.price}</strong>
         </p>
         <div className="increment-and-decrement">
           <Quantifier />
