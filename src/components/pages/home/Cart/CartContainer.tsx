@@ -69,7 +69,7 @@ export function CartContainer() {
               Total <S.Price>R$ 77,00</S.Price>
             </S.InformationOnTheTotalToBePaid>
           </S.TextInformationContainer>
-          <S.ConfirmOrderButton>confirmar pedido</S.ConfirmOrderButton>
+          <S.ConfirmOrderButton to="/confirmed">confirmar pedido</S.ConfirmOrderButton>
         </S.SelectedCoffeeCard>
       </S.SelectedCoffeeContainer>
     </S.Container>

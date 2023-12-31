@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.section`
@@ -138,7 +139,7 @@ export const InformationOnTheTotalToBePaid = styled.p`
 
 export const Price = styled.span``;
 
-export const ConfirmOrderButton = styled.button`
+export const ConfirmOrderButton = styled(NavLink)`
   text-transform: uppercase;
   display: flex;
   margin-top: 24px;
@@ -152,6 +153,7 @@ export const ConfirmOrderButton = styled.button`
   background: var(--brand-yellow);
 
   color: var(--base-white);
+  text-decoration: none;
 
   font-size: 14px;
   font-weight: 700;
