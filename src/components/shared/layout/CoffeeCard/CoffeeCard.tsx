@@ -15,7 +15,7 @@ export interface CoffeeProps {
 export function CoffeeCard({ coffee }: CoffeeProps) {
   const [quantity, setQuantity] = useState(0);
 
-  function createCoffeeOnLocalStorage() {
+   function createCoffeeOnLocalStorage() {
     const coffeeList = window.localStorage.getItem("coffeeList");
 
     if (coffeeList === null) {

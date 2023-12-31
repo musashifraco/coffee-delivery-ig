@@ -2,8 +2,8 @@ import { CImage } from "@coreui/react";
 import { Form } from "../Form/Form.tsx";
 import * as S from "./CartContainer.style.ts";
 import BinIcon from "../../../../../public/icons/BinIcon.svg";
-import { Quantifier } from "../../../shared/layout/Quantifier/Quantifier.tsx";
 import { useEffect, useState } from "react";
+import { QuantifierOfCard } from "./QuantifierOfCard.tsx";
 
 export function CartContainer() {
   const [orderList, setOderList] = useState<any | null>([]);
@@ -20,30 +20,32 @@ export function CartContainer() {
   return (
     <S.Container>
       <Form />
-      <S.SelectedCoffeeContainer> 
+      <S.SelectedCoffeeContainer>
         <S.ContainerTitleConfirmOrder>
           Cafés selecionados
         </S.ContainerTitleConfirmOrder>
         <S.SelectedCoffeeCard>
           <S.CoffeeItemsContainer>
-            <S.CoffeeItemContainer>
-              {orderList.map((element) => (
+            {orderList.map((element) => (
+              <S.CoffeeItemContainer>
                 <S.CoffeeItem>
                   <CImage src={`${element?.coffeeObject?.url}`} />
                   <S.CoffeeItemInfo>
                     <S.CoffeeName>{element?.coffeeObject?.title}</S.CoffeeName>
                     <S.CoffeeItemButtons>
-                      <Quantifier />
+                      <QuantifierOfCard coffee={element} />
                       <S.RemoveCoffeeItemButton>
                         <CImage src={BinIcon} />
                         remover
                       </S.RemoveCoffeeItemButton>
                     </S.CoffeeItemButtons>
                   </S.CoffeeItemInfo>
-                  <S.CoffeeItemPrice>R$ {element?.coffeeObject?.price}</S.CoffeeItemPrice>
+                  <S.CoffeeItemPrice>
+                    R$ {element?.coffeeObject?.price}
+                  </S.CoffeeItemPrice>
                 </S.CoffeeItem>
-              ))}
-            </S.CoffeeItemContainer>
+              </S.CoffeeItemContainer>
+            ))}
           </S.CoffeeItemsContainer>
           <S.TextInformationContainer>
             <S.TotalItemInformation>
