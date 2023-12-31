@@ -2,7 +2,7 @@
 import IcrementIcon from "../../../../../public/icons/increment icon.svg";
 import DecrementIcon from "../../../../../public/icons/decrement icon.svg";
 import { QuantifierContainer } from "../../../shared/layout/Quantifier/Quantifier.styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function QuantifierOfCard({coffee} : any) {
   const [coffeeQuantity, setCoffeeQuantity] = useState(coffee?.productQuantity)

@@ -7,13 +7,26 @@ import { QuantifierOfCard } from "./QuantifierOfCard.tsx";
 
 export function CartContainer() {
   const [orderList, setOderList] = useState<any | null>([]);
+  const [deliveryPriceState, setDeliveryPriceState] = useState(7);
+  const [totalPriceOfItemsState, setTotalPriceOfItemsState] = useState(0);
+  const [totalSumOfAllValuesState, setTotalSumOfAllValuesState] = useState(0);
 
   useEffect(() => {
     const orderListStored = JSON.parse(
       window.localStorage.getItem("coffeeList") || "[]"
     );
     setOderList(orderListStored);
-  }, []);
+
+    const totalPriceOfItems = orderListStored.reduce(
+      (accumulator: any, currentValue: any) =>
+        accumulator +
+        currentValue.coffeeObject.price * currentValue.productQuantity,
+      0
+    );
+    const totalSumOfAllValues = deliveryPriceState + totalPriceOfItems;
+    setTotalPriceOfItemsState(totalPriceOfItems);
+    setTotalSumOfAllValuesState(totalSumOfAllValues);
+  }, [orderList]);
 
   function removeItem(id: any) {
     const coffeeListArray = JSON.parse(
@@ -22,7 +35,7 @@ export function CartContainer() {
     const index = coffeeListArray.findIndex((x: { id: any }) => x.id === id);
 
     coffeeListArray.splice(index, 1);
-    window.localStorage.setItem("coffeeList", JSON.stringify(coffeeListArray))
+    window.localStorage.setItem("coffeeList", JSON.stringify(coffeeListArray));
     setOderList(coffeeListArray);
   }
 
@@ -60,16 +73,32 @@ export function CartContainer() {
           </S.CoffeeItemsContainer>
           <S.TextInformationContainer>
             <S.TotalItemInformation>
-              Total de itens <S.Price>R$ 70,00</S.Price>
+              Total de itens{" "}
+              <S.Price>
+                R${" "}
+                {totalPriceOfItemsState.toFixed(2).toString().replace(".", ",")}
+              </S.Price>
             </S.TotalItemInformation>
             <S.DeliveryPriceInformation>
-              Entrega <S.Price>R$ 7,00</S.Price>
+              Entrega{" "}
+              <S.Price>
+                R$ {deliveryPriceState.toFixed(2).toString().replace(".", ",")}
+              </S.Price>
             </S.DeliveryPriceInformation>
             <S.InformationOnTheTotalToBePaid>
-              Total <S.Price>R$ 77,00</S.Price>
+              Total{" "}
+              <S.Price>
+                R${" "}
+                {totalSumOfAllValuesState
+                  .toFixed(2)
+                  .toString()
+                  .replace(".", ",")}
+              </S.Price>
             </S.InformationOnTheTotalToBePaid>
           </S.TextInformationContainer>
-          <S.ConfirmOrderButton to="/confirmed">confirmar pedido</S.ConfirmOrderButton>
+          <S.ConfirmOrderButton to="/confirmed">
+            confirmar pedido
+          </S.ConfirmOrderButton>
         </S.SelectedCoffeeCard>
       </S.SelectedCoffeeContainer>
     </S.Container>
