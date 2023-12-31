@@ -15,7 +15,16 @@ export function CartContainer() {
     setOderList(orderListStored);
   }, []);
 
-  console.log(orderList);
+  function removeItem(id: any) {
+    const coffeeListArray = JSON.parse(
+      window.localStorage.getItem("coffeeList") || "[]"
+    );
+    const index = coffeeListArray.findIndex((x: { id: any }) => x.id === id);
+
+    coffeeListArray.splice(index, 1);
+    window.localStorage.setItem("coffeeList", JSON.stringify(coffeeListArray))
+    setOderList(coffeeListArray);
+  }
 
   return (
     <S.Container>
@@ -27,14 +36,16 @@ export function CartContainer() {
         <S.SelectedCoffeeCard>
           <S.CoffeeItemsContainer>
             {orderList.map((element) => (
-              <S.CoffeeItemContainer>
+              <S.CoffeeItemContainer key={element?.id}>
                 <S.CoffeeItem>
                   <CImage src={`${element?.coffeeObject?.url}`} />
                   <S.CoffeeItemInfo>
                     <S.CoffeeName>{element?.coffeeObject?.title}</S.CoffeeName>
                     <S.CoffeeItemButtons>
                       <QuantifierOfCard coffee={element} />
-                      <S.RemoveCoffeeItemButton>
+                      <S.RemoveCoffeeItemButton
+                        onClick={() => removeItem(element?.id)}
+                      >
                         <CImage src={BinIcon} />
                         remover
                       </S.RemoveCoffeeItemButton>
