@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.section`
@@ -6,6 +7,7 @@ export const Container = styled.section`
   align-items: center;
   height: 100%;
   width: 100%;
+  gap: 10px;
 
   > img {
     width: 492px;
@@ -47,6 +49,7 @@ export const OrderInfo = styled.div`
   align-items: center;
   gap: 12px;
   img {
+    top: 100px;
     display: flex;
     padding: 8px;
     justify-content: center;
@@ -62,5 +65,38 @@ export const OrderInfoTextDescription = styled.div`
   font-family: "Roboto";
   font-size: 16px;
   font-style: normal;
+  font-weight: 700;
+`;
+
+export const RedirectToHomePageContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  img {
+    position: relative;
+    top: 40px;
+  }
+`;
+
+export const GoToHomePage = styled(NavLink)`
+  text-transform: uppercase;
+  display: flex;
+  height: 46px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 60px;
+
+  border-radius: 6px;
+  border: none;
+  background: var(--brand-yellow);
+
+  color: var(--base-white);
+  text-decoration: none;
+
+  font-size: 14px;
   font-weight: 700;
 `;

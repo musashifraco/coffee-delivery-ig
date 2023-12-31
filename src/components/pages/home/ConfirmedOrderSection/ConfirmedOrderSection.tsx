@@ -17,26 +17,36 @@ export function ConfirmedOrderSection() {
           <S.OrderInfo>
             <CImage src={LocalCircle} />
             <S.OrderInfoText>
-              <S.OrderInfoTextDescription>Entrega em Rua João Daniel Martinelli, 102 Farrapos - Porto Alegre, RS</S.OrderInfoTextDescription>
+              <S.OrderInfoTextDescription>
+                Entrega em Rua João Daniel Martinelli, 102 Farrapos - Porto
+                Alegre, RS
+              </S.OrderInfoTextDescription>
             </S.OrderInfoText>
           </S.OrderInfo>
           <S.OrderInfo>
-            <CImage src={TimeCircle}/>
+            <CImage src={TimeCircle} />
             <S.OrderInfoText>
               <S.OrderInfoTextTitle>Previsão de entrega</S.OrderInfoTextTitle>
-              <S.OrderInfoTextDescription>20 min - 30 min </S.OrderInfoTextDescription>
+              <S.OrderInfoTextDescription>
+                20 min - 30 min{" "}
+              </S.OrderInfoTextDescription>
             </S.OrderInfoText>
           </S.OrderInfo>
           <S.OrderInfo>
-            <CImage src={MoneyCircle}/>
+            <CImage src={MoneyCircle} />
             <S.OrderInfoText>
               <S.OrderInfoTextTitle>Pagamento na entrega</S.OrderInfoTextTitle>
-              <S.OrderInfoTextDescription>Cartão de Crédito</S.OrderInfoTextDescription>
+              <S.OrderInfoTextDescription>
+                Cartão de Crédito
+              </S.OrderInfoTextDescription>
             </S.OrderInfoText>
           </S.OrderInfo>
         </S.OrderInformationContainer>
       </S.ConfirmedOrderInformationContainer>
-      <CImage src={Deliveryman}/>
+      <S.RedirectToHomePageContainer>
+        <CImage src={Deliveryman} />
+        <S.GoToHomePage to="/">Voltar Para Página Inicial</S.GoToHomePage>
+      </S.RedirectToHomePageContainer>
     </S.Container>
   );
 }
